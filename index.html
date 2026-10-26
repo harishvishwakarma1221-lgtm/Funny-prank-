@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funny Prank 😂</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#16002b,#42105c,#071d45);
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  padding: 25px 15px;
+  box-sizing: border-box;
+}
+.card {
+  max-width: 400px;
+  margin: 45px auto;
+  padding: 25px 18px;
+  border-radius: 25px;
+  background: #ffffff18;
+  border: 1px solid #ffffff40;
+  box-shadow: 0 10px 40px #0005;
+}
+h1 { font-size: 30px; }
+button {
+  background: #ffca28;
+  color: #23103b;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 25px;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 15px;
+}
+#messages {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+.msg {
+  background: #ffffff20;
+  border-radius: 15px;
+  padding: 15px;
+  animation: pop .35s ease;
+}
+@keyframes pop {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>😂 Oyeee!</h1>
+  <p>Tere liye ek special surprise hai 🤣</p>
+  <div style="font-size:55px">📱💥</div>
+  <button onclick="startPrank()">Surprise kholo 😈</button>
+  <div id="messages"></div>
+</div>
+<script>
+const jokes = [
+  "🤣 Pakde gaye!",
+  "😂 Bhai, smile toh kar!",
+  "📱 Phone nahi, prank hai!",
+  "😜 Itna serious kyun?",
+  "🤝 Dosti mein sab chalta hai!",
+  "🎉 Surprise complete!"
+];
+function startPrank() {
+  const area = document.getElementById("messages");
+  if (area.children.length) return;
+  let i = 0;
+  function show() {
+    if (i >= jokes.length) return;
+    const msg = document.createElement("div");
+    msg.className = "msg";
+    msg.textContent = jokes[i++];
+    area.appendChild(msg);
+    setTimeout(show, 800);
+  }
+  show();
+}
+</script>
+</body>
+</html>
